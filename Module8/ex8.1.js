@@ -7,4 +7,15 @@ const book = {
 }
 
 //‘The book <book name> was written by <author name> in the year <publishing year>’
-console.log('The book',book['title'],'was written by',book['authorName'],'in the year',book['publishingYear'] );
+function getBookDescription(book){
+    return (
+       'The book ' +
+        book.title +
+        'was written by'
+        book.authorName +
+        'in the year' +
+        book.publishingYear +
+        '.'
+    )
+}
+      
