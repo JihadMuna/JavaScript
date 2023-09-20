@@ -26,6 +26,7 @@ switch(currentDay) {
     case 6:
         currentDay="Saturday";
         break;
+        
         default:
             currentDay="Day not found";
             break;
