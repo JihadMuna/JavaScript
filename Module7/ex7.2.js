@@ -9,3 +9,4 @@ const indexOfSecond = string.indexOf(searchWord, indexOfFirst + 1); // to get th
 /*console.log(`The index of the first "${searchWord}" from the beginning is ${indexOfFirst}`); // check indexOf for the first "you"*/
 console.log(`The index of the last occurrence of the word "${searchWord}" is ${string.indexOf(searchWord, indexOfSecond + 1)}`); // get the index of the last occurrence of the word “you” V
 
+
