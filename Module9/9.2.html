@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+     const randNum = Math.floor((Math.random() *50) + 1);
+     console.log("Rand is: ",randNum);
+
+     /*
+    1. get user number geuss
+    2. check if it the same as the rand number
+    3. if it is - stop the game
+    4. if its too small - alert "its too small"
+    5. if its too big - alert "its too big"
+    6. repeat 1-5 */
+
+    let guess = -1;
+    let isCorrect = false;
+    while (!isCorrect) { // iscorrect === false
+        guess = parseInt(prompt('Guess a number between 1-50'));
+    if (guess === randNum){
+        console.log("Correct !");
+        isCorrect = true;
+    } else if ( randNum > guess) {
+        console.log("Too small !");
+    } else {
+        console.log("Too big !");
+    }
+    }
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
