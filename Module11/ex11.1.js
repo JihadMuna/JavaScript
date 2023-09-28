@@ -53,15 +53,15 @@ releases.forEach((movie) =>{
 return movieData;
 }
 const movieList = NewMovieData(newReleases);
-console.log(movieList);
+console.log('movieList:', movieList);
 
 // 2. Create another function that will do the same thing except
 // now use the map method.
-const NewMovieData2 = newReleases.map((movie) =>{
+const movieList2 = newReleases.map((movie) =>{
   const movieList1 = {
         id: movie.id,
         name: movie.title,
     }
     return movieList1;
 });
-console.log(NewMovieData2);
+console.log('movieList2:', movieList2);
