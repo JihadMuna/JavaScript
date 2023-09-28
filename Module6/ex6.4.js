@@ -1,0 +1,2 @@
+const populations = [];
+function populationPercentages

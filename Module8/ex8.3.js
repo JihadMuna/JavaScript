@@ -12,14 +12,17 @@ const book2 = {
     editionYear: 2022
 };
 const bookUtils = {
-    getFirstPublished:function(book1,book2) {
-   let firstPublished = book1.publishYear < book2.publishYear? book1 : book2;
+    getFirstPublished:function(b1,b2) {
+   let firstPublished = b1.publishYear < b2.publishYear? b1 : b2;
    return firstPublished;
     },
     setNewEdition:function(book,newEditionYear){
-        book.latestEdition = newEditionYear;
+       let newEditionYear = book.latestEdition;
+        return newEditionYear;
     },
-    setLanguage:function(book,language)
+    setLanguage:function(book,newLanguage){
+        let newLanguage = book.
+    }
 
 }
 console.log('The first published book is: '+ bookUtils.getFirstPublished(book1,book2).bookName);
