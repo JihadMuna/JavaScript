@@ -55,33 +55,54 @@ console.log('The vowel counts is:', counts);
 // 5. Write a function capitalize that takes a string as an
 // argument and will return the whole string capitalized.
 function capitalize (str) {
-    return str.toUpperCase();
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
 //Example
 const capitalizedString = capitalize('hello, my name is jihad.');
-console.log('The capitalizd string : ', capitalizedString);
+console.log('The capitalized string : ', capitalizedString);
 
 // 6. Write a function called shiftLetters that takes a string as an
 // argument and return’s an encoded string with each letter
 // shifted down the alphabet by one.
 function shiftLetters (str) {
-    return str.split('').map((char) => {
-        if (char >= 'a' && char <= 'z') {
-        const shiftedCharCode = ((char.charCodeAt(0) - 'a'.charCodeAt(0) + 1) % 26)            
+   const shiftedChars = str.split('') //first splits the string into an array of individual characters,
+      .map((char) => { //using the map function to transform each character in the array.
+        if (/^[a-zA-Z]$/.test(char)) { //We use a regular expression (/^[a-zA-Z]$/) to check if the character is a letter
+        const shiftedCharCode = char.charCodeAt(0) + 1; //If the character is a letter, we calculate the new character code (shiftedCharCode) by adding 1 to its current character code. This shifts the letter down the alphabet by one position.
+        if ((char >= 'a' && char <= 'z' && shiftedCharCode > 'z'.charCodeAt(0)) ||
+           (char >= 'A' && char <= 'Z' && shiftedCharCode > 'Z'.charCodeAt(0))) {
+            return String.fromCharCode(shiftedCharCode - 26); //If the shifted character code goes beyond 'z' or 'Z' (the end of the alphabet), we need to wrap around. 
+           }else {
+            return String.fromCharCode(shiftedCharCode); //We use String.fromCharCode to convert the shifted character code back to a character.
+           }
+        }else {
+            return char;
         }
-    })
+});
+      return shiftedChars.join('');//After mapping all the characters, we have an array of shifted characters. We use join('') to join them back together into a single string.
 }
-
-
-
-
-
-
-
+// trying the code :
+const encoded = shiftLetters("abc");
+console.log('encoded for th input "abc" is: ',encoded); // Output: "bcd"
 
 
 // 7. Create a function called swapCase that takes a string as
 // an argument and returns a string that every other word is
 // capitalized. (you can use the fifth’s exercise's function to
 // keep it dry)
+
+function swapCase (str) {
+   const words = str.split(' '); // Split the string into words 
+   const swappedWords = words.map((word, index) => {
+if (index % 2 === 0) {
+    return capitalize(word);
+} else {
+    return word;
+}
+   });
+   return swappedWords.join(' '); // Join the words back together to form the final string
+}
+//testing code:
+const swapCaseString = swapCase('hello, my name is jihad.');
+console.log('The swapCase string : ', swapCaseString);

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<ul>
+<li>title 1</li>
+<li class="start-here">title 2</li>
+<li>
+<ul>
+<li>sub title 1</li>
+<li>sub title 2</li>
+<li>sub title 3</li>
+</ul>
+</li>
+<li>title 3</li>
+</ul>
+<div>
+<p>Hello World!</p>
+</div>
+
+<script>
+    //Create a variable that holds the <li> element with the class “start-here”.
+    const li1 = document.querySelector(".start-here");
+    
+    //1. Change the text from “title 2” to “main title”
+    li1.textContent ="main title";
+
+    //2. Add another subtitle with the text “subtitle 4”
+    const newSubtitle = document.createElement("li");
+    newSubtitle.textContent = "sub title 4";
+li1.nextElementSibling.querySelector("ul").appendChild(newSubtitle);
+
+//3. Delete the last <li> element from the list.
+const lastLi = document.querySelector("ul:last-child li:last-child");
+lastLi.parentElement.removeChild(lastLi);
+
+//4. Change the <title> element text to “Master Of The Dom”.
+document.title = "Master Of The Dom";
+
+//5. Change the text of the <p> element ot something else of your
+const pElement = document.querySelector("div p");
+pElement.textContent = "This is a new text for the <p> element."
+
+</script>
+
+</body>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible"
+content="IE=edge" />
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0" />
+<title>Document</title>
+</head>
+<body>
+<h1>Header</h1>
+<p>Paragraph</p>
+<a href="#">link</a>
+<img src="" alt="" />
+<div class="x">Div with a class</div>
+<div id="y">Div with an id</div>
+<input type="text" />
+<input type="text" />
+<input type="text" />
+</body>
+
+<script>
+console.log(document);
+
+const h1 = document.getElementsByTagName("h1");
+console.log("h1", h1[0]);
+
+const p = document.getElementsByTagName("p");
+console.log("p", p[0]);
+
+const divY = document.getElementById("y");
+console.log("divY", divY);
+
+const divX = document.getElementsByClassName("x");
+console.log("divX", divX[0]);
+
+const img = document.getElementsByTagName("img");
+console.log("img", img[0]);
+
+const inputs = document.getElementsByTagName("input");
+Array.from(inputs).forEach(input => {
+    console.log(input);
+})
+
+const queryH1 = document.querySelector("h1");
+console.log("h1" , queryH1);
+
+const queryP = document.querySelector("p");
+console.log("p", queryP);
+
+const queryDivY = document.querySelector("y");
+console.log("y", queryDivY);
+
+const queryDivX = document.querySelector("x");
+console.log("x", queryDivX);
+
+const queryImg = document.querySelector("img");
+console.log("img", queryImg);
+
+const queryInputs = document.querySelectorAll("input");
+Array.from(queryInputs).forEach(input => {
+    console.log(input);
+})
+
+</script>
+</html>
