@@ -10,19 +10,20 @@ characters before clicking the button.
 give him the appropriate message. (using alert is
 forbidden) **/
 
-
-const minCharacters = 100;
-
-const section = document.querySelector("section");
 const h5 = document.querySelector("h5");
-section.append(h5);
-const input = document.querySelector("input");
-section.append(input);
+const userInput = document.querySelector("#userInput");
 const button = document.querySelector("button");
-section.append(button);
+const errorMessage = document.querySelector("#errorMessage");
 
-input.addEventListener("click", () => {
-    while (input>=100) {
-        
-   
-})
+
+// Add an event listener to the submit button
+button.addEventListener("click", () => {
+   // Get the value from the text area
+   const text = userInput.value;
+          // Check if the text has at least 100 characters
+          if (text.length < 100){
+         errorMessage.textContent = "Please enter at least 100 characters.";
+          } else {
+            errorMessage.textContent = "";
+          }
+});
