@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert User Inputs</title>
+</head>
+<body>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        
+        <label for=email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword"><br>
+
+        <input type="submit" value="submit">
+    </form>
+
+
+    <script>
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Retrieve input values
+    const username = form.elements.username.value;
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+
+     // Display an alert with the entered values
+     alert("Username: " + username +"\nEmail: " + email +"\nPassword: " + password);
+});
+    </script>
+</body>
+</html>
