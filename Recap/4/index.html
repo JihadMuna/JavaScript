@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation Exercise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section class="container">
+    <form id="userForm">
+        
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <section class="error-message" id="usernameError"></section>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+
+      <section class="error-message" id="emailError"></section>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <section class="error-message" id="passwordError"></section>
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+      <section class="error-message" id="confirmPasswordError"></section>
+      <input type="submit" value="Submit">
+
+    </form>
+  </section>
+ 
+  <script src="index.js"></script>
+</body>
+
+</html>
