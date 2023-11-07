@@ -1,28 +1,22 @@
-body {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background-color: black;
+#gameContainer {
+    text-align: center;
 }
 
-#game-board {
-    background-color: #ccc;
-    width: 100vmin;
-height: 100vmin;
-display: grid;
-grid-template-rows: repeat(21,1fr);
-grid-template-columns: repeat(21,1fr);
+#gameBoard {
+    border: 3px solid;
 }
 
-.snack {
-background-color: blue;
-border: 0.25vmin solid black;
+#scoreText {
+    font-family: "permanent Marker", cursive;
+    font-size: 100px;
 }
 
-.food {
-background-color: yellow;
-border: 0.25vmin solid black;
+#resetBtn {
+    font-family: "permanent Marker", cursive;
+    font-size: 22px;
+    width: 100px;
+    height: 50px;
+    border: 4px solid;
+    border-radius: 15px;
+    cursor: pointer;
 }

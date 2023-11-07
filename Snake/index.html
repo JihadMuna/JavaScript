@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack Game</title>
     <link rel="stylesheet" href="style.css">
-    <script src="game.js" defer type="module"></script>
 </head>
 <body>
-    <section id="game-board"></section>
+    <section id="gameContainer">
+        <canvas id="gameBoard" width="500" height="500"></canvas>
+   <section id="scoreText">0</section>
+        <button id="resetBtn">Reset</button>
+    </section>
+    <script src="game.js"></script>
 </body>
 </html>
