@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joke of the Day</title>
+</head>
+<body>
+
+    <!-- Let's do a simple ajax call with fetch using this URL
+    “https://api.jokes.one/jod”.
+    Create a button that will fetch the joke of the day.
+    Display to the screen the joke title and the joke itself. -->
+
+<button onclick="fetchJoke()">Get Joke of the Day</button>
+<section id="joke-container"></section>
+
+<script>
+  function fetchJoke() {
+    // The URL for the joke of the day
+    const url = "https://api.jokes.one/jod";
+
+    // Fetch the joke
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+
+      .then(data => {
+        // Extracting the joke title and content
+        const jokeTitle = data.contents.jokes[0].joke.title;
+        const jokeContent = data.contents.jokes[0].joke.text;
+
+        // Display the joke on the page
+        displayJoke(jokeTitle, jokeContent);
+      })
+      
+      .catch(error => {
+        console.error('Error fetching joke:', error);
+      });
+  }
+
+  function displayJoke(title, content) {
+    // Update the DOM with the joke title and content
+    const jokeContainer = document.getElementById('joke-container');
+    jokeContainer.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+  }
+</script>
+
+</body>
+</html>
